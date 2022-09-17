@@ -7,6 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 const fs = require('fs');
+let {PythonShell} = require('python-shell')
 
 router.post('/run', (req, res) => {
   let files = req.body;
@@ -32,7 +33,10 @@ router.post('/run', (req, res) => {
       console.log("File written successfully\n");
     }
   });
-  
+  PythonShell.run('main.py', null, function (err) {
+    if (err) throw err;
+    console.log('finished');
+  });
 });
 
 module.exports = router;
