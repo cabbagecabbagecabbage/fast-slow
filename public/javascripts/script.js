@@ -20,6 +20,8 @@ async function getData(data) {
 }
 
 function run(){
+    var element = document.getElementById('stop');
+    element.style.opacity = "0.9";
     console.log("Attempting to run code...");
     fast_code = ace.edit("fast-code-editor").getValue();
     slow_code = ace.edit("slow-code-editor").getValue();
@@ -33,6 +35,7 @@ function run(){
     getData(input).then(
         function(value) {
             // outputs response in browser console
+            element.style.opacity = "0.5";
             console.log(value);
         }
     );
