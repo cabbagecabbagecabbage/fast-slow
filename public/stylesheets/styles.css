@@ -1,0 +1,85 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.65;
+    background-color: #f5f2f7;
+    color: #29344B;
+    font-family: arial, sans-serif;
+  }
+
+/* 
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+} */
+
+main, #results {
+    height: 100vh;
+}
+
+#options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1rem 0;
+    background-color: black;
+    height: 10%;
+    min-height: 3rem;
+}
+
+button {
+    color: white !important;
+}
+
+#run {
+    background-color: green;
+}
+
+#stop {
+    background-color: red;
+}
+
+#input {
+    height: 90%;
+}
+
+#input, #results {
+    --min: 10ch;
+    --gap: 0.5rem;
+    background-color: darkblue;
+    
+    display: grid;
+    grid-gap: var(--gap);
+    /* min() with 100% prevents overflow
+    in extra narrow spaces */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+}
+
+#input > div, #results > div {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+#input > div > div, #results > div > div {
+    height: 100%;
+    padding: 0.5rem;
+}
+
+p {
+    color: white;
+    font-size: 1.5rem;
+}
