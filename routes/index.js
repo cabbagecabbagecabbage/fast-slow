@@ -13,7 +13,44 @@ const { resourceLimits } = require('worker_threads');
 
 router.post('/run', (req, res) => {
   let files = req.body;
-  console.log(files.fast);
+  files.fast = 
+`
+import sys
+FILE = open("fastAns.txt", "w")
+data = open("testData.txt", "r")
+sys.stdout = FILE
+input = data.readline
+`
++ files.fast + 
+`
+FILE.close()
+data.close()
+`;
+files.slow = 
+`
+import sys
+FILE = open("slowAns.txt", "w")
+data = open("testData.txt", "r")
+sys.stdout = FILE
+input = data.readline
+`
++ files.slow + 
+`
+FILE.close()
+data.close()
+`;
+
+  files.generator = 
+`
+import sys
+data = open("testData.txt","w")
+sys.stdout = data
+`
++ files.generator + 
+`
+data.close()
+`;
+
   fs.writeFile("fast.py", files.fast, (err) => {
     if (err)
       console.log(err);

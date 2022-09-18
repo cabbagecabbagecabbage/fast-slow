@@ -11,13 +11,15 @@ p {
   margin: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
 body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.65;
     background-color: #f5f2f7;
     color: #29344B;
-    font-family: arial, sans-serif;
+    font-family: "IBM Plex Sans", arial, sans-serif;
   }
 
 /* 
@@ -74,6 +76,8 @@ button {
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    text-align: center;
+    background-color: blue;
 }
 #input > div > div, #results > div > div {
     height: 100%;

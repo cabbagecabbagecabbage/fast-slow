@@ -16,9 +16,9 @@ async function getData(data) {
         .then((response) => response.json())
         .then((data) => {
             console.log('Success:', data);
-            document.getElementById('result').innerHTML = data.result.replaceAll("\n","<br>");
-            document.getElementById('fast-code-output').innerHTML = data.fast_ans.replaceAll("\n","<br>");
-            document.getElementById('slow-code-output').innerHTML = data.slow_ans.replaceAll("\n","<br>");
+            document.getElementById('result').innerHTML = data.result.replaceAll("\n","<br>").substring(0, 600);
+            document.getElementById('fast-code-output').innerHTML = data.fast_ans.replaceAll("\n","<br>").substring(0, 600);
+            document.getElementById('slow-code-output').innerHTML = data.slow_ans.replaceAll("\n","<br>").substring(0, 600);
         })
         .catch((error) => {
             console.error('Error:', error);
