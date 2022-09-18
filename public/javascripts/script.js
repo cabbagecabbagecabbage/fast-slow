@@ -4,7 +4,7 @@ const res = require('express/lib/response');
 
 async function getData(data) { 
     //sending a POST request to get a bunch of information about the user
-    const URL = 'http://localhost:3000/run';
+    const URL = 'https://fast-slow-debugger.herokuapp.com/run';
     console.log(JSON.stringify(data))
     fetch(URL, {
         method: 'POST', // or 'PUT'
