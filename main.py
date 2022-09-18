@@ -9,19 +9,19 @@ for i in range(1, 1+CASES):
     try:
         import gen
     except:
-        res.write("Generator is broken\n")
+        res.write("Generator is broken. ")
         fail = True
 
     try:
         import fast
     except:
-        res.write("Fast is invalid\n")
+        res.write("Fast is invalid. ")
         fail = True
 
     try:
         import slow
     except:
-        res.write("Slow is invalid\n")
+        res.write("Slow is invalid. ")
         fail = True
     
     if not fail:

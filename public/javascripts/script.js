@@ -3,6 +3,7 @@
 async function getData(data) { 
     //sending a POST request to get a bunch of information about the user
     const URL = 'http://localhost:3000/run';
+    console.log(JSON.stringify(data))
     fetch(URL, {
         method: 'POST', // or 'PUT'
         headers: {
@@ -13,10 +14,14 @@ async function getData(data) {
         .then((response) => response.json())
         .then((data) => {
             console.log('Success:', data);
+            document.getElementById('result').innerHTML = data.result.replaceAll("\n","<br>");
+            document.getElementById('fast-code-output').innerHTML = data.fast_ans.replaceAll("\n","<br>");
+            document.getElementById('slow-code-output').innerHTML = data.slow_ans.replaceAll("\n","<br>");
         })
         .catch((error) => {
             console.error('Error:', error);
         });
+
 }
 
 function run(){
@@ -31,7 +36,8 @@ function run(){
         slow: slow_code,
         generator: generator_code
     };
-    console.log(input);
+    console.log(JSON.stringify(input))
+    console.log("HELLO")
     getData(input).then(
         function(value) {
             // outputs response in browser console

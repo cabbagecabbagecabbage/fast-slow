@@ -49,9 +49,9 @@
             <div type="text" id="slow-code-output"></div>
 
         </div>
-        <div id="generator-code">
+        <div id=test-case">
             <p>Test Case</p>
-            <div type="text" id="test-case"></div>
+            <div type="text" id="result"></div>
 
         </div>
     </section>
@@ -77,9 +77,9 @@
         slow_output.setTheme("ace/theme/monokai");
         slow_output.session.setMode("ace/mode/python");
 
-        var test_case = ace.edit("test-case");
-        test_case.setTheme("ace/theme/monokai");
-        test_case.session.setMode("ace/mode/python");
+        var result = ace.edit("result");
+        result.setTheme("ace/theme/monokai");
+        result.session.setMode("ace/mode/python");
     </script>
 </body>
 </html>
