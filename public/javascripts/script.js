@@ -1,5 +1,7 @@
 // const { param } = require("../../routes");
 
+const res = require('express/lib/response');
+
 async function getData(data) { 
     //sending a POST request to get a bunch of information about the user
     const URL = 'http://localhost:3000/run';
